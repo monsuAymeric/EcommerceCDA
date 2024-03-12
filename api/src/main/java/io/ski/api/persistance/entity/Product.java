@@ -19,6 +19,7 @@ public class Product {
 
     /**
      * return the product's id
+     * 
      * @return the product's id
      */
     public long getId() {
@@ -27,6 +28,7 @@ public class Product {
 
     /**
      * set the product's id
+     * 
      * @param id the product's id to set
      */
     public void setId(long id) {
@@ -35,6 +37,7 @@ public class Product {
 
     /**
      * return the product's name
+     * 
      * @return the product's name
      */
     public String getName() {
@@ -43,6 +46,7 @@ public class Product {
 
     /**
      * set the product's name
+     * 
      * @param name the product's name to set
      */
     public void setName(String name) {
@@ -51,6 +55,7 @@ public class Product {
 
     /**
      * return the product's reference
+     * 
      * @return the product's reference
      */
     public Reference getReference() {
@@ -59,6 +64,7 @@ public class Product {
 
     /**
      * set the product's reference
+     * 
      * @param reference the product's reference to set
      */
     public void setReference(Reference reference) {
