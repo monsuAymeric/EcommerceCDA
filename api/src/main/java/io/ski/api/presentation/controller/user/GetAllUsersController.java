@@ -1,12 +1,14 @@
 package io.ski.api.presentation.controller.user;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import io.ski.api.business.dto.UserDto;
 import io.ski.api.business.service.user.IUserService;
 
-public class ModifyUserController {
+public class GetAllUsersController {
     private IUserService userService;
 
     /**
@@ -15,17 +17,17 @@ public class ModifyUserController {
      * @param userService the user service
      */
     @Autowired
-    public ModifyUserController(IUserService userService) {
+    public GetAllUsersController(IUserService userService) {
         this.userService = userService;
     }
 
     /**
-     * Modifies the user.
+     * Gets all users.
      * 
-     * @param user the user to modify
+     * @return a list of all users
      */
-    @PostMapping("/users/modify")
-    public void modifyUser(final UserDto user) {
-        userService.modifyUser(user);
+    @GetMapping("/users")
+    public List<UserDto> getAllUsers() {
+        return userService.getAllUsers();
     }
 }
