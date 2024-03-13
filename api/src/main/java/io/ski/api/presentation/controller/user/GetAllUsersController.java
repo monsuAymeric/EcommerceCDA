@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import io.ski.api.business.dto.UserDto;
 import io.ski.api.business.service.user.IUserService;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class GetAllUsersController {
     private IUserService userService;
 

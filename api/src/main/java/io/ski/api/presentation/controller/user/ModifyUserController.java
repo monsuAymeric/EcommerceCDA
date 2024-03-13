@@ -5,7 +5,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import io.ski.api.business.dto.UserDto;
 import io.ski.api.business.service.user.IUserService;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class ModifyUserController {
     private IUserService userService;
 
