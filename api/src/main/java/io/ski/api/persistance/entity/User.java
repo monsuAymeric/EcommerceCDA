@@ -77,4 +77,22 @@ public class User {
     public void setPassword(final String password) {
         this.password = password;
     }
+
+    /**
+     * Returns the user's email.
+     * 
+     * @return the user's email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * Sets the user's email.
+     * 
+     * @param email the user's email to set
+     */
+    public void setEmail(final String email) {
+        this.email = email;
+    }
 }
