@@ -29,7 +29,7 @@ public class GetUserByUsernameController {
      * @return the users with the given username
      */
     @GetMapping("/users/{username}")
-    public List<UserDto> getUserById(final @PathVariable String username) {
+    public List<UserDto> getUserByUsername(final @PathVariable String username) {
         return userService.getUserByUsername(username);
     }
 }
