@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -24,9 +23,6 @@ public class User {
 
     @Column(name = "email", nullable = false, unique = true, length = 50)
     private String email;
-
-    @OneToOne(mappedBy = "user")
-    private Cart cart;
 
     /**
      * Returns the user's id.
@@ -80,23 +76,5 @@ public class User {
      */
     public void setPassword(final String password) {
         this.password = password;
-    }
-
-    /**
-     * Returns the user's cart.
-     * 
-     * @return the user's cart
-     */
-    public Cart getCart() {
-        return cart;
-    }
-
-    /**
-     * Sets the user's cart.
-     * 
-     * @param cart the user's cart to set
-     */
-    public void setCart(Cart cart) {
-        this.cart = cart;
     }
 }
