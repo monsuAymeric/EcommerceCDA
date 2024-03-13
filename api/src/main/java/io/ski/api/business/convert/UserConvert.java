@@ -3,6 +3,7 @@ package io.ski.api.business.convert;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.ski.api.business.dto.UserDto;
 import io.ski.api.persistance.entity.User;
 
 public class UserConvert {
@@ -26,8 +27,8 @@ public class UserConvert {
      * @param entity the entity to convert.
      * @return the converted DTO.
      */
-    public User entityToDto(final User entity) {
-        User dto = new User();
+    public UserDto entityToDto(final User entity) {
+        UserDto dto = new UserDto();
         dto.setId(entity.getId());
         dto.setUsername(entity.getUsername());
         dto.setPassword(entity.getPassword());
@@ -41,7 +42,7 @@ public class UserConvert {
      * @param dto the DTO to convert.
      * @return the converted entity.
      */
-    public User dtoToEntity(final User dto) {
+    public User dtoToEntity(final UserDto dto) {
         User entity = new User();
         entity.setId(dto.getId());
         entity.setUsername(dto.getUsername());
@@ -56,8 +57,8 @@ public class UserConvert {
      * @param entityList the entity list to convert.
      * @return the converted DTO list.
      */
-    public List<User> entityListToDtoList(final List<User> entityList) {
-        List<User> dtoList = new ArrayList<>();
+    public List<UserDto> entityListToDtoList(final List<User> entityList) {
+        List<UserDto> dtoList = new ArrayList<>();
         for (User entity : entityList) {
             dtoList.add(entityToDto(entity));
         }
@@ -70,9 +71,9 @@ public class UserConvert {
      * @param dtoList the DTO list to convert.
      * @return the converted entity list.
      */
-    public List<User> dtoListToEntityList(final List<User> dtoList) {
+    public List<User> dtoListToEntityList(final List<UserDto> dtoList) {
         List<User> entityList = new ArrayList<>();
-        for (User dto : dtoList) {
+        for (UserDto dto : dtoList) {
             entityList.add(dtoToEntity(dto));
         }
         return entityList;
