@@ -26,8 +26,6 @@ public interface IReferenceService {
      * @param id the id of the reference.
      * @return the reference with the given id
      */
-    List<ReferenceDto> getByIdReference(final long id);
-
     ReferenceDto getByIdReference(Long id);
 
     /**
@@ -39,7 +37,7 @@ public interface IReferenceService {
     List<ReferenceDto> getByNameReference(final String name);
 
     /**
-     * Modifies the referencce
+     * Modifies the reference
      *
      * @param reference the reference to modify
      */
