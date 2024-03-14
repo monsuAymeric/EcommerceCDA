@@ -31,11 +31,6 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public ProductDto getByRefProduct(long reference) {
-        return ProductConvert.getInstance().entityToDto(productRepository.findByRef(reference));
-    }
-
-    @Override
     public void modifyProduct(final ProductDto product) {
         productRepository.save(ProductConvert.getInstance().dtoToEntity(product));
     }

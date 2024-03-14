@@ -9,6 +9,7 @@ import java.util.List;
 public class ReferenceConvert {
 
     private static ReferenceConvert instance;
+    private ProductConvert productConvert = ProductConvert.getInstance();
 
     /**
      * Get the singleton instance of this class.
@@ -35,6 +36,7 @@ public class ReferenceConvert {
         dto.setColor(entity.getColor());
         dto.setPrice(entity.getPrice());
         dto.setDescription(entity.getDescription());
+        dto.setProducts(productConvert.entityListToDtoList(entity.getProducts()));
         return dto;
     }
 
@@ -51,6 +53,7 @@ public class ReferenceConvert {
         entity.setColor(dto.getColor());
         entity.setPrice(dto.getPrice());
         entity.setDescription(dto.getDescription());
+        entity.setProducts(productConvert.dtoListToEntityList(dto.getProducts()));
         return entity;
     }
 

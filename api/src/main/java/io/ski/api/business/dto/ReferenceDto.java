@@ -1,11 +1,14 @@
 package io.ski.api.business.dto;
 
+import java.util.List;
+
 public class ReferenceDto {
     private long id;
     private String name;
     private double price;
     private String color;
     private String description;
+    private List<ProductDto> products;
 
     /**
      * Get the reference's id.
@@ -95,5 +98,23 @@ public class ReferenceDto {
      */
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    /**
+     * Get the reference's products.
+     *
+     * @return the reference's products.
+     */
+    public List<ProductDto> getProducts() {
+        return products;
+    }
+
+    /**
+     * Set the reference's products.
+     *
+     * @param products the reference's products to set.
+     */
+    public void setProducts(List<ProductDto> products) {
+        this.products = products;
     }
 }

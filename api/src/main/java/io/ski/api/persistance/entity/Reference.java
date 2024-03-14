@@ -1,6 +1,16 @@
 package io.ski.api.persistance.entity;
 
-import jakarta.persistence.*;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "refs")
@@ -22,6 +32,9 @@ public class Reference {
 
     @Column(name = "description", nullable = false, columnDefinition = "TEXT")
     private String description;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Product> products;
 
     /**
      * Return the reference's id
@@ -111,5 +124,23 @@ public class Reference {
      */
     public void setDescription(final String description) {
         this.description = description;
+    }
+
+    /**
+     * Return the reference's products
+     * 
+     * @return the reference's products
+     */
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    /**
+     * Set the reference's products
+     * 
+     * @param products the reference's products to set
+     */
+    public void setProducts(final List<Product> products) {
+        this.products = products;
     }
 }

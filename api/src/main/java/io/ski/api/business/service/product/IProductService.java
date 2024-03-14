@@ -29,14 +29,6 @@ public interface IProductService {
     ProductDto getByIdProduct(final long id);
 
     /**
-     * Returns the product with the given reference.
-     *
-     * @param reference the id of the product
-     * @return the product with the given id
-     */
-    ProductDto getByRefProduct(final long reference);
-
-    /**
      * Modifies the product.
      *
      * @param product the product to modify

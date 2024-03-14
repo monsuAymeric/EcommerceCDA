@@ -17,7 +17,7 @@ public class ProductDto {
      *
      * @param id the product's id to set
      */
-    public void setId(long id) {
+    public void setId(final long id) {
         this.id = id;
     }
 }
