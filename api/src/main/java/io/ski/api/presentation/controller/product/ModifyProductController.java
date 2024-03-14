@@ -2,10 +2,14 @@ package io.ski.api.presentation.controller.product;
 
 import io.ski.api.business.dto.ProductDto;
 import io.ski.api.business.service.product.IProductService;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin
 public class ModifyProductController {
     private IProductService productService;
 
@@ -24,7 +28,7 @@ public class ModifyProductController {
      * @param product the product to modify
      */
     @PostMapping("/products/modify")
-    public void modifyProduct(final ProductDto product) {
+    public void modifyProduct(final @RequestBody ProductDto product) {
         productService.modifyProduct(product);
     }
 }
