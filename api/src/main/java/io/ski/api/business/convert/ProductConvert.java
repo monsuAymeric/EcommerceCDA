@@ -31,7 +31,6 @@ public class ProductConvert {
     public ProductDto entityToDto(final Product entity) {
         ProductDto dto = new ProductDto();
         dto.setId(entity.getId());
-        dto.setName(entity.getName());
         return dto;
     }
 
@@ -44,7 +43,6 @@ public class ProductConvert {
     public Product dtoToEntity(final ProductDto dto) {
         Product entity = new Product();
         entity.setId(dto.getId());
-        entity.setName(dto.getName());
         return entity;
     }
 

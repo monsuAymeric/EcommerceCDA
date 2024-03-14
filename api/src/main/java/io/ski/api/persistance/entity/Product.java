@@ -10,9 +10,6 @@ public class Product {
     @Column(name = "id_product")
     private long id;
 
-    @Column(name = "name", nullable = false, length = 50)
-    private String name;
-
     @OneToOne(cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "id_ref", referencedColumnName = "id_ref")
     private Reference reference;
@@ -33,24 +30,6 @@ public class Product {
      */
     public void setId(long id) {
         this.id = id;
-    }
-
-    /**
-     * return the product's name
-     * 
-     * @return the product's name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * set the product's name
-     * 
-     * @param name the product's name to set
-     */
-    public void setName(String name) {
-        this.name = name;
     }
 
     /**
