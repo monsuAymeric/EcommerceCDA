@@ -22,9 +22,6 @@ public class Reference {
     @Column(name = "description", nullable = false, columnDefinition = "TEXT")
     private String description;
 
-    @OneToOne(mappedBy = "reference")
-    private Product product;
-
     /**
      * Return the reference's id
      * @return the reference's id
