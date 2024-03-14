@@ -4,7 +4,7 @@ import io.ski.api.business.dto.ProductDto;
 import io.ski.api.business.service.product.IProductService;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,7 +27,7 @@ public class ModifyProductController {
      *
      * @param product the product to modify
      */
-    @PostMapping("/products/modify")
+    @PutMapping("/products")
     public void modifyProduct(final @RequestBody ProductDto product) {
         productService.modifyProduct(product);
     }
