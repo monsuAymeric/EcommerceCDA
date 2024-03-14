@@ -2,6 +2,7 @@ package io.ski.api.presentation.controller.user;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import io.ski.api.business.dto.UserDto;
@@ -9,6 +10,7 @@ import io.ski.api.business.service.user.IUserService;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin
 public class GetAllUsersController {
     private IUserService userService;
 

@@ -1,12 +1,15 @@
 package io.ski.api.presentation.controller.user;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import io.ski.api.business.dto.UserDto;
 import io.ski.api.business.service.user.IUserService;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin
 public class ModifyUserController {
     private IUserService userService;
 
@@ -25,7 +28,7 @@ public class ModifyUserController {
      * @param user the user to modify
      */
     @PostMapping("/users/modify")
-    public void modifyUser(final UserDto user) {
+    public void modifyUser(final @RequestBody UserDto user) {
         userService.modifyUser(user);
     }
 }

@@ -2,12 +2,15 @@ package io.ski.api.presentation.controller.reference;
 
 import io.ski.api.business.dto.ReferenceDto;
 import io.ski.api.business.service.reference.IReferenceService;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class GetAllReferenceController {
     private IReferenceService referenceService;
 
