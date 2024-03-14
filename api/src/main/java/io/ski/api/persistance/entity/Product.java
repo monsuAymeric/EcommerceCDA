@@ -1,6 +1,11 @@
 package io.ski.api.persistance.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "products")
@@ -9,10 +14,6 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_product")
     private long id;
-
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "id_ref", referencedColumnName = "id_ref")
-    private Reference reference;
 
     /**
      * return the product's id
@@ -30,23 +31,5 @@ public class Product {
      */
     public void setId(long id) {
         this.id = id;
-    }
-
-    /**
-     * return the product's reference
-     * 
-     * @return the product's reference
-     */
-    public Reference getReference() {
-        return reference;
-    }
-
-    /**
-     * set the product's reference
-     * 
-     * @param reference the product's reference to set
-     */
-    public void setReference(Reference reference) {
-        this.reference = reference;
     }
 }
