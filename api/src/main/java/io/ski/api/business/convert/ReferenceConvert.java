@@ -36,7 +36,7 @@ public class ReferenceConvert {
         dto.setColor(entity.getColor());
         dto.setPrice(entity.getPrice());
         dto.setDescription(entity.getDescription());
-        dto.setProducts(productConvert.entityListToDtoList(entity.getProducts()));
+        dto.setProducts(entity.getProducts() != null ? productConvert.entityListToDtoList(entity.getProducts()) : null);
         return dto;
     }
 
@@ -53,7 +53,7 @@ public class ReferenceConvert {
         entity.setColor(dto.getColor());
         entity.setPrice(dto.getPrice());
         entity.setDescription(dto.getDescription());
-        entity.setProducts(productConvert.dtoListToEntityList(dto.getProducts()));
+        entity.setProducts(dto.getProducts() != null ? productConvert.dtoListToEntityList(dto.getProducts()) : null);
         return entity;
     }
 
