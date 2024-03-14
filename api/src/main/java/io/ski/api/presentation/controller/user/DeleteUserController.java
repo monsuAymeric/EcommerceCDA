@@ -1,6 +1,5 @@
 package io.ski.api.presentation.controller.user;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,15 +12,16 @@ public class DeleteUserController {
 
     /**
      * Injects the user service.
+     * 
      * @param userService the user service
      */
-    @Autowired
     public DeleteUserController(IUserService userService) {
         this.userService = userService;
     }
 
     /**
      * Deletes the user with the given id.
+     * 
      * @param id the id of the user
      */
     @DeleteMapping("/users/{id}")

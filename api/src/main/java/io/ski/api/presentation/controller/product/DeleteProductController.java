@@ -1,7 +1,6 @@
 package io.ski.api.presentation.controller.product;
 
 import io.ski.api.business.service.product.IProductService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +13,6 @@ public class DeleteProductController {
      * Injects the product service.
      * @param productService the product service
      */
-    @Autowired
     public DeleteProductController(IProductService productService) {
         this.productService = productService;
     }

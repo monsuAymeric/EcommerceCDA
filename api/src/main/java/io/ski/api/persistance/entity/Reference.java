@@ -1,4 +1,5 @@
 package io.ski.api.persistance.entity;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -24,6 +25,7 @@ public class Reference {
 
     /**
      * Return the reference's id
+     * 
      * @return the reference's id
      */
     public long getId() {
@@ -32,6 +34,7 @@ public class Reference {
 
     /**
      * Set the reference's id
+     * 
      * @param id the reference's id to set
      */
     public void setId(final long id) {
@@ -40,6 +43,7 @@ public class Reference {
 
     /**
      * Return the reference's name
+     * 
      * @return the reference's name
      */
     public String getName() {
@@ -48,6 +52,7 @@ public class Reference {
 
     /**
      * Set the reference's name
+     * 
      * @param name the reference's name to set
      */
     public void setName(final String name) {
@@ -56,6 +61,7 @@ public class Reference {
 
     /**
      * return the reference's price
+     * 
      * @return the reference's price
      */
     public double getPrice() {
@@ -64,6 +70,7 @@ public class Reference {
 
     /**
      * Set the reference's price
+     * 
      * @param price the reference's price
      */
     public void setPrice(final double price) {
@@ -72,6 +79,7 @@ public class Reference {
 
     /**
      * return the reference's color
+     * 
      * @return the reference's color
      */
     public String getColor() {
@@ -80,6 +88,7 @@ public class Reference {
 
     /**
      * set the reference's color
+     * 
      * @param color the reference color to set
      */
     public void setColor(final String color) {
@@ -88,6 +97,7 @@ public class Reference {
 
     /**
      * return the reference's description
+     * 
      * @return the reference description
      */
     public String getDescription() {
@@ -96,6 +106,7 @@ public class Reference {
 
     /**
      * Set the reference's description
+     * 
      * @param description reference's description to set
      */
     public void setDescription(final String description) {

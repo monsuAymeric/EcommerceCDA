@@ -2,7 +2,6 @@ package io.ski.api.presentation.controller.product;
 
 import io.ski.api.business.dto.ProductDto;
 import io.ski.api.business.service.product.IProductService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,8 +14,7 @@ public class ModifyProductController {
      *
      * @param productService the product service
      */
-    @Autowired
-    public  ModifyProductController(IProductService productService) {
+    public ModifyProductController(IProductService productService) {
         this.productService = productService;
     }
 

@@ -3,7 +3,6 @@ package io.ski.api.business.service.cart;
 import io.ski.api.business.convert.CartConvert;
 import io.ski.api.business.dto.CartDto;
 import io.ski.api.persistance.repository.cart.ICartRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,7 +10,6 @@ public class CartServiceImpl implements ICartService {
 
     private ICartRepository cartRepository;
 
-    @Autowired
     public CartServiceImpl(final ICartRepository cartRepository) {
         this.cartRepository = cartRepository;
     }
