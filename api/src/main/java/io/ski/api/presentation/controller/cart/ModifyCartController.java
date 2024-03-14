@@ -3,7 +3,7 @@ package io.ski.api.presentation.controller.cart;
 import io.ski.api.business.dto.CartDto;
 import io.ski.api.business.service.cart.ICartService;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,7 +26,7 @@ public class ModifyCartController {
      *
      * @param cart the cart to modify
      */
-    @PostMapping("/cart/modify")
+    @PutMapping("/cart")
     public void modifyCart(final @RequestBody CartDto cart) {
         cartService.modifyCart(cart);
     }

@@ -1,7 +1,7 @@
 package io.ski.api.presentation.controller.user;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import io.ski.api.business.dto.UserDto;
@@ -27,7 +27,7 @@ public class ModifyUserController {
      * 
      * @param user the user to modify
      */
-    @PostMapping("/users/modify")
+    @PutMapping("/users")
     public void modifyUser(final @RequestBody UserDto user) {
         userService.modifyUser(user);
     }

@@ -32,7 +32,7 @@ public class Reference {
     @Column(name = "description", nullable = false, columnDefinition = "TEXT")
     private String description;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Product> products;
 
     /**
