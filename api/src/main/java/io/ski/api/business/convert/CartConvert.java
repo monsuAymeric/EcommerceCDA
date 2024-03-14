@@ -59,7 +59,7 @@ public class CartConvert {
         return dtoList;
     }
 
-    public List<Cart> DtoListToEntityList(final List<CartDto> dtoList) {
+    public List<Cart> dtoListToEntityList(final List<CartDto> dtoList) {
         List<Cart> entityList = new ArrayList<>();
         for (CartDto dto : dtoList) {
             entityList.add(dtoToEntity(dto));
