@@ -28,7 +28,7 @@ public class CreateReferenceController {
      * @param reference the reference to create
      */
     @PostMapping("/refs")
-    public void createReference(@RequestBody ReferenceDto reference) {
+    public void createReference(final @RequestBody ReferenceDto reference) {
         referenceService.createReference(reference);
     }
 }

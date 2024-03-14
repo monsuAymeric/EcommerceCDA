@@ -1,12 +1,15 @@
 package io.ski.api.presentation.controller.user;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.ski.api.business.dto.UserDto;
 import io.ski.api.business.service.user.IUserService;
 
 @RestController
+@CrossOrigin
 public class CreateUserController {
     private IUserService userService;
 
@@ -25,7 +28,7 @@ public class CreateUserController {
      * @param user the user to create
      */
     @PostMapping("/users")
-    public void createUser(final UserDto user) {
+    public void createUser(final @RequestBody UserDto user) {
         userService.createUser(user);
     }
 }
