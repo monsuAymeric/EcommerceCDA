@@ -3,7 +3,6 @@ package io.ski.api.business.service.reference;
 import io.ski.api.business.convert.ReferenceConvert;
 import io.ski.api.business.dto.ReferenceDto;
 import io.ski.api.persistance.repository.reference.IReferenceRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +12,6 @@ public class ReferenceServiceImpl implements IReferenceService {
 
     private IReferenceRepository referenceRepository;
 
-    @Autowired
     public ReferenceServiceImpl(final IReferenceRepository referenceRepository) {
         this.referenceRepository = referenceRepository;
     }
@@ -44,5 +42,7 @@ public class ReferenceServiceImpl implements IReferenceService {
     }
 
     @Override
-    public void deleteReference(final long id) { referenceRepository.deleteById(id); }
+    public void deleteReference(final long id) {
+        referenceRepository.deleteById(id);
+    }
 }

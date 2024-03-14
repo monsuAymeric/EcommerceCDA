@@ -2,7 +2,6 @@ package io.ski.api.presentation.controller.user;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import io.ski.api.business.dto.UserDto;
@@ -18,7 +17,6 @@ public class GetAllUsersController {
      * 
      * @param userService the user service
      */
-    @Autowired
     public GetAllUsersController(IUserService userService) {
         this.userService = userService;
     }

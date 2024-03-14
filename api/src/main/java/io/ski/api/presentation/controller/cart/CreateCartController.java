@@ -2,7 +2,6 @@ package io.ski.api.presentation.controller.cart;
 
 import io.ski.api.business.dto.CartDto;
 import io.ski.api.business.service.cart.ICartService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +14,6 @@ public class CreateCartController {
      *
      * @param cartService the cart service
      */
-    @Autowired
     public CreateCartController(ICartService cartService) {
         this.cartService = cartService;
     }

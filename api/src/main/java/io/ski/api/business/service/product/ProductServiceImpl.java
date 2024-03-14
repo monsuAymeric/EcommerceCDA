@@ -3,7 +3,6 @@ package io.ski.api.business.service.product;
 import io.ski.api.business.convert.ProductConvert;
 import io.ski.api.business.dto.ProductDto;
 import io.ski.api.persistance.repository.product.IProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,10 +11,10 @@ import java.util.List;
 public class ProductServiceImpl implements IProductService {
     private IProductRepository productRepository;
 
-    @Autowired
     public ProductServiceImpl(final IProductRepository productRepository) {
         this.productRepository = productRepository;
     }
+
     @Override
     public void createProduct(final ProductDto product) {
         productRepository.save(ProductConvert.getInstance().dtoToEntity(product));

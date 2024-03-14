@@ -2,7 +2,6 @@ package io.ski.api.business.service.user;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.ski.api.business.convert.UserConvert;
@@ -13,7 +12,6 @@ import io.ski.api.persistance.repository.user.IUserRepository;
 public class UserServiceImpl implements IUserService {
     private IUserRepository userRepository;
 
-    @Autowired
     public UserServiceImpl(final IUserRepository userRepository) {
         this.userRepository = userRepository;
     }

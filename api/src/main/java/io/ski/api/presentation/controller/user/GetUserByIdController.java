@@ -1,6 +1,5 @@
 package io.ski.api.presentation.controller.user;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -17,7 +16,6 @@ public class GetUserByIdController {
      * 
      * @param userService the user service
      */
-    @Autowired
     public GetUserByIdController(IUserService userService) {
         this.userService = userService;
     }
