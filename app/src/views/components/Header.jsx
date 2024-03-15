@@ -1,12 +1,16 @@
 import "bulma/css/bulma.min.css";
+import logo from "../../public/assets/images/logo.svg";
 
 export default function header() {
+
     return (
         <div className='column is-8 is-offset-2'>
             <nav className='navbar' role='navigation' aria-label='main navigation'>
                 <div className='navbar-brand'>
                     <a className='navbar-item' href='/'>
-                        <img src='https://bulma.io/images/bulma-logo.png' width='112' height='28' />
+                        <figure className='image'>
+                            <img src={logo} height='80' width='80' />
+                        </figure>
                     </a>
                 </div>
 
@@ -26,7 +30,9 @@ export default function header() {
                                 <a className='button is-primary' disabled>
                                     <strong>S&#39;enregistrer</strong>
                                 </a>
-                                <a className='button is-light' disabled>Se connecter</a>
+                                <a className='button is-light' disabled>
+                                    Se connecter
+                                </a>
                             </div>
                         </div>
                     </div>
