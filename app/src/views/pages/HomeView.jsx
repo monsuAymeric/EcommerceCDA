@@ -1,11 +1,14 @@
-import { useEffect } from "react";
 import Header from "../components/Header";
+import ProductImage from "../../utils/ProductImages";
+import { useEffect, useState } from "react";
 
 export default function HomeView({ references }) {
+    const [src, setSrc] = useState(ProductImage)
     useEffect(() => {
-        console.log(references);
-    }, [references]);
-
+         console.log("ProductImage", ProductImage);
+        // setSrc(() => { ProductImage }) 
+    })
+    const getRandomNumber = (max) => { return Math.floor(Math.random() * max); };
     return (
         <div>
             <Header />
@@ -14,16 +17,34 @@ export default function HomeView({ references }) {
                     <div className='columns is-centered is-multiline'>
                         {references
                             ? references.map((ref, i) => (
-                                  <div className='column is-4' key={i}>
-                                      <div className='content'>
-                                          <h1>Nom du produit : {ref.name}</h1>
-                                          <p>Description : {ref.description}</p>
-                                          <p>Prix : {ref.price}€</p>
-                                          <p>Couleur : {ref.color}</p>
-                                          <p>Quantité : {ref.products.length}</p>
-                                      </div>
-                                  </div>
-                              ))
+                                <div className='column is-4' key={i}>
+                                    <div className="card">
+                                        <div className="card-image">
+                                            <figure className="image is-4by3">
+                                                <img src={src[getRandomNumber(5)]} alt="Placeholder image" />
+                                            </figure>
+                                        </div>
+                                        <div className="card-content">
+                                            <div className="media">
+                                                <div className="media-content">
+                                                    <p className="title is-6">{ref.name}</p>
+                                                    <p className="subtitle is-6">{ref.price}€</p>
+                                                </div>
+                                            </div>
+
+                                            <div className="content">
+                                                <p>
+                                                    {ref.description} <br />
+                                                    color: {ref.color} <br />
+                                                    quantity: {ref.products.length} <br />
+                                                </p>
+                                                <br />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div />
+                                </div>
+                            ))
                             : null}
                     </div>
                 </div>
