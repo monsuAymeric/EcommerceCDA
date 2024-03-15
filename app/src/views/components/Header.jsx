@@ -1,5 +1,5 @@
 import "bulma/css/bulma.min.css";
-import logo from "../../public/assets/images/logo.svg";
+import logo from "/assets/images/logo.svg";
 
 export default function header() {
 
