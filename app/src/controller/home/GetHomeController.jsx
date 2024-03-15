@@ -5,6 +5,10 @@ import HomeView from "../../views/pages/HomeView";
 export default function GetHomeController() {
     const [references, setReferences] = useState([]);
 
+    const addToCart = (id) => {
+        ReferenceService.addToCart(id);
+    };
+
     const fetchReferences = async () => {
         console.log(await ReferenceService.fetchReferences());
         const refs = await ReferenceService.fetchReferences();
@@ -17,5 +21,5 @@ export default function GetHomeController() {
         fetchReferences();
     }, []);
 
-    return <HomeView references={references} />;
+    return <HomeView references={references} callback={addToCart}/>;
 }
