@@ -1,9 +1,7 @@
 import Header from "../components/Header";
 import ProductImage from "../../utils/ProductImages";
-import { useState } from "react";
 
 export default function HomeView({ references, callback }) {
-    const [src, setSrc] = useState(ProductImage);
     const getRandomNumber = (max) => {
         return Math.floor(Math.random() * max);
     };
@@ -19,7 +17,7 @@ export default function HomeView({ references, callback }) {
                                       <div className='card'>
                                           <div className='card-image'>
                                               <figure className='image is-4by3'>
-                                                  <img src={src[getRandomNumber(5)]} alt='Product' />
+                                                  <img src={ProductImage[getRandomNumber(5)]} alt='Product' />
                                               </figure>
                                           </div>
                                           <div className='card-content'>
