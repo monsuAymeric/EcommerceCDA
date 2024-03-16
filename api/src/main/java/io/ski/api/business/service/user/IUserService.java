@@ -49,4 +49,12 @@ public interface IUserService {
      * @param id the id of the user
      */
     void deleteUser(final Long id);
+
+    /**
+     * Logs the user.
+     * @param email the email of the user
+     * @param password the password of the user
+     * @return the state of the login
+     */
+    String login(final String email, final String password);
 }

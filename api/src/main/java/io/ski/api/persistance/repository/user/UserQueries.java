@@ -7,4 +7,6 @@ public class UserQueries {
     }
 
     public static final String FIND_BY_USERNAME = "SELECT u FROM User u WHERE u.username = :username";
+
+    public static final String FIND_BY_EMAIL = "SELECT u FROM User u WHERE u.email = :email";
 }

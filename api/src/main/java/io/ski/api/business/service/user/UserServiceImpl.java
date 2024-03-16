@@ -9,6 +9,7 @@ import io.ski.api.business.convert.UserConvert;
 import io.ski.api.business.dto.CartDto;
 import io.ski.api.business.dto.UserDto;
 import io.ski.api.business.service.cart.ICartService;
+import io.ski.api.persistance.entity.User;
 import io.ski.api.persistance.repository.user.IUserRepository;
 
 @Service
@@ -56,5 +57,14 @@ public class UserServiceImpl implements IUserService {
     public void deleteUser(final Long id) {
         CartDto cartDto = cartService.getByUserCart(id);
         cartService.deleteCart(cartDto.getId());
+    }
+
+    @Override
+    public String login(final String email, final String password) {
+        final User user = userRepository.findByEmail(email);
+        if (user != null && user.getPassword().equals(password)) {
+            return "success";
+        }
+        return "failure";
     }
 }
