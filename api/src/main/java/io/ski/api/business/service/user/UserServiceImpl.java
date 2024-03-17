@@ -63,7 +63,7 @@ public class UserServiceImpl implements IUserService {
     public String login(final String email, final String password) {
         final User user = userRepository.findByEmail(email);
         if (user != null && user.getPassword().equals(password)) {
-            return "success";
+            return user.getId().toString();
         }
         return "failure";
     }

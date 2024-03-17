@@ -48,7 +48,6 @@ export default function HomeView({ references, callback }) {
                                               </div>
                                           </div>
                                       </div>
-                                      <div />
                                   </div>
                               ))
                             : null}

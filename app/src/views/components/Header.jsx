@@ -1,7 +1,15 @@
 import "bulma/css/bulma.min.css";
 import logo from "/assets/images/logo.svg";
+import LoginChecker from "../../utils/LoginChecker";
 
 export default function header() {
+    const isLoggedIn = LoginChecker.checkLogged();
+
+    const logout = () => {
+        localStorage.removeItem("user");
+        localStorage.removeItem("cart");
+        window.location.reload();
+    };
 
     return (
         <div className='column is-8 is-offset-2'>
@@ -23,16 +31,23 @@ export default function header() {
                             Panier
                         </a>
                     </div>
-
                     <div className='navbar-end'>
                         <div className='navbar-item'>
                             <div className='buttons'>
-                                <a className='button is-primary' disabled>
-                                    <strong>S&#39;enregistrer</strong>
-                                </a>
-                                <a className='button is-light' disabled>
-                                    Se connecter
-                                </a>
+                                {isLoggedIn ? (
+                                    <button className='button is-danger' onClick={logout}>
+                                        Se déconnecter
+                                    </button>
+                                ) : (
+                                    <>
+                                        <a className='button is-primary' href='/register'>
+                                            <strong>S&#39;enregistrer</strong>
+                                        </a>
+                                        <a className='button is-light' href='/login'>
+                                            Se connecter
+                                        </a>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </div>
