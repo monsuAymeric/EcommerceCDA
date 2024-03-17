@@ -27,7 +27,7 @@ public class ModifyCartController {
      * @param cart the cart to modify
      */
     @PutMapping("/carts")
-    public void modifyCart(final @RequestBody CartDto cart) {
-        cartService.modifyCart(cart);
+    public CartDto modifyCart(final @RequestBody CartDto cart) {
+        return cartService.modifyCart(cart);
     }
 }

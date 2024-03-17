@@ -13,7 +13,7 @@ export default function header() {
 
     return (
         <div className='column is-8 is-offset-2'>
-            <nav className='navbar' role='navigation' aria-label='main navigation'>
+            <nav className='navbar is-info' role='navigation' aria-label='main navigation'>
                 <div className='navbar-brand'>
                     <a className='navbar-item' href='/'>
                         <figure className='image'>
@@ -40,10 +40,10 @@ export default function header() {
                                     </button>
                                 ) : (
                                     <>
-                                        <a className='button is-primary' href='/register'>
+                                        <a className='button is-info' href='/register'>
                                             <strong>S&#39;enregistrer</strong>
                                         </a>
-                                        <a className='button is-light' href='/login'>
+                                        <a className='button is-success has-text-weight-bold' href='/login'>
                                             Se connecter
                                         </a>
                                     </>

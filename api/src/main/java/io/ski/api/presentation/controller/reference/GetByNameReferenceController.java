@@ -30,8 +30,8 @@ public class GetByNameReferenceController {
      * @param name the username of the users
      * @return the references with the given name
      */
-    @GetMapping("/refs/{name}")
-    public List<ReferenceDto> getByNameReference(final @PathVariable String name) {
+    @GetMapping("/refs/name/{name}")
+    public List<ReferenceDto> getByNameReference(final @PathVariable("name") String name) {
         return referenceService.getByNameReference(name);
     }
 }

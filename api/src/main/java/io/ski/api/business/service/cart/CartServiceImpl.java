@@ -25,8 +25,13 @@ public class CartServiceImpl implements ICartService {
     }
 
     @Override
-    public void modifyCart(CartDto cart) {
-        cartRepository.save(CartConvert.getInstance().dtoToEntity(cart));
+    public CartDto modifyCart(CartDto cart) {
+        CartDto cartDto = CartConvert.getInstance()
+                .entityToDto(cartRepository.save(CartConvert.getInstance().dtoToEntity(cart)));
+        if (cartDto != null) {
+            return cartDto;
+        }
+        return null;
     }
 
     @Override

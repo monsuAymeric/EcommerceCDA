@@ -5,6 +5,7 @@ export default function HomeView({ references, callback }) {
     const getRandomNumber = (max) => {
         return Math.floor(Math.random() * max);
     };
+
     return (
         <div>
             <Header />
@@ -27,23 +28,20 @@ export default function HomeView({ references, callback }) {
                                                       <p className='subtitle is-6'>{ref.price}€</p>
                                                   </div>
                                               </div>
-                                              <div className='level'>
-                                                  <div className='level-left'>
-                                                      <div className='content'>
-                                                          <p>
-                                                              {ref.description} <br />
-                                                              color: {ref.color} <br />
-                                                              quantity: {ref.products.length} <br />
-                                                          </p>
-                                                          <br />
+                                              <div className='columns'>
+                                                  <div className='column is-10 content'>
+                                                      <p>
+                                                          {ref.description} <br />
+                                                          Couleur {ref.color} <br />
+                                                          Stock: {ref.products.length} <br />
+                                                      </p>
                                                       </div>
-                                                  </div>
-                                                  <div className='level-right'>
-                                                      <button className='button is-info' onClick={() => callback(ref.id)}>
-                                                          <span className='icon'>
-                                                              <img src='/assets/icons/plus.svg' alt='logo' />
-                                                          </span>
-                                                      </button>
+                                                      <div className="column is-2">
+                                                          <button className='button is-info' onClick={() => callback(ref.id)}>
+                                                              <span className='icon'>
+                                                                  <img src='/assets/icons/plus.svg' alt='logo' />
+                                                              </span>
+                                                          </button>
                                                   </div>
                                               </div>
                                           </div>

@@ -24,7 +24,7 @@ public interface ICartService {
      *
      * @param cart the cart to modify
      */
-    void modifyCart(final CartDto cart);
+    CartDto modifyCart(final CartDto cart);
 
     /**
      * Deletes the cart with the given id.
