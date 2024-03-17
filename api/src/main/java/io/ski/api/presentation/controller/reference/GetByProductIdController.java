@@ -1,8 +1,7 @@
 package io.ski.api.presentation.controller.reference;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,8 +29,8 @@ public class GetByProductIdController {
      * @param id the id of the product
      * @return the reference with the given product id
      */
-    @GetMapping("/refs/product")
-    public ReferenceDto getByProduct(final @RequestBody ProductDto product) {
+    @PostMapping("/refs/product")
+    public ReferenceDto getByProduct(@RequestBody ProductDto product) {
         return referenceService.getByProduct(product);
     }
 }
