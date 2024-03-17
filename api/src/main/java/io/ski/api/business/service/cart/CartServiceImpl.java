@@ -3,11 +3,11 @@ package io.ski.api.business.service.cart;
 import io.ski.api.business.convert.CartConvert;
 import io.ski.api.business.dto.CartDto;
 import io.ski.api.persistance.repository.cart.ICartRepository;
+
 import org.springframework.stereotype.Service;
 
 @Service
 public class CartServiceImpl implements ICartService {
-
     private ICartRepository cartRepository;
 
     public CartServiceImpl(final ICartRepository cartRepository) {
@@ -25,8 +25,13 @@ public class CartServiceImpl implements ICartService {
     }
 
     @Override
-    public void modifyCart(CartDto cart) {
-        cartRepository.save(CartConvert.getInstance().dtoToEntity(cart));
+    public CartDto modifyCart(CartDto cart) {
+        CartDto cartDto = CartConvert.getInstance()
+                .entityToDto(cartRepository.save(CartConvert.getInstance().dtoToEntity(cart)));
+        if (cartDto != null) {
+            return cartDto;
+        }
+        return null;
     }
 
     @Override

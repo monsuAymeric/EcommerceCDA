@@ -21,7 +21,7 @@ public class GetByUserCartController {
         this.cartService = cartService;
     }
 
-    @GetMapping("/cart/{id}")
+    @GetMapping("/carts/{id}")
     public CartDto getByUserCart(final @PathVariable Long id) {
         return cartService.getByUserCart(id);
     }

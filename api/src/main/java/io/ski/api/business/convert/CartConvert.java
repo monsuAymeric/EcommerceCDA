@@ -1,13 +1,19 @@
 package io.ski.api.business.convert;
 
 import io.ski.api.business.dto.CartDto;
+import io.ski.api.business.dto.ProductDto;
 import io.ski.api.persistance.entity.Cart;
+import io.ski.api.persistance.entity.Product;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class CartConvert {
     private static CartConvert instance;
+    private UserConvert userConvert = UserConvert.getInstance();
+    private ProductConvert productConvert = ProductConvert.getInstance();
 
     /**
      * Get the singleton instance of the class.
@@ -30,6 +36,12 @@ public class CartConvert {
     public CartDto entityToDto(final Cart entity) {
         CartDto dto = new CartDto();
         dto.setId(entity.getId());
+        dto.setUser(entity.getUser() != null ? userConvert.entityToDto(entity.getUser()) : null);
+        Set<ProductDto> productsDto = new HashSet<>();
+        for (Product product : entity.getProducts()) {
+            productsDto.add(productConvert.entityToDto(product));
+        }
+        dto.setProducts(productsDto);
         return dto;
     }
 
@@ -42,6 +54,15 @@ public class CartConvert {
     public Cart dtoToEntity(final CartDto dto) {
         Cart entity = new Cart();
         entity.setId(dto.getId());
+        entity.setUser(dto.getUser() != null ? userConvert.dtoToEntity(dto.getUser()) : null);
+        Set<ProductDto> productsDto = dto.getProducts();
+        Set<Product> products = new HashSet<>();
+        if (productsDto != null) {
+            for (ProductDto productDto : productsDto) {
+                products.add(productConvert.dtoToEntity(productDto));
+            }
+        }
+        entity.setProducts(products);
         return entity;
     }
 

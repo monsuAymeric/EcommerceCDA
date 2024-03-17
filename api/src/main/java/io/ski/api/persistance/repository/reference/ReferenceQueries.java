@@ -7,4 +7,5 @@ public class ReferenceQueries {
     }
 
     public static final String FIND_BY_NAME = "Select r FROM Reference r WHERE r.name = :name";
+    public static final String FIND_BY_PRODUCT = "Select r FROM Reference r WHERE :product MEMBER OF r.products";
 }

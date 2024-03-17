@@ -1,3 +1,4 @@
+
 package io.ski.api.persistance.entity;
 
 import jakarta.persistence.Column;

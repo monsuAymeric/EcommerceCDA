@@ -1,7 +1,10 @@
 package io.ski.api.business.service.reference;
 
+import io.ski.api.business.convert.ProductConvert;
 import io.ski.api.business.convert.ReferenceConvert;
+import io.ski.api.business.dto.ProductDto;
 import io.ski.api.business.dto.ReferenceDto;
+import io.ski.api.persistance.entity.Reference;
 import io.ski.api.persistance.repository.reference.IReferenceRepository;
 import org.springframework.stereotype.Service;
 
@@ -44,5 +47,12 @@ public class ReferenceServiceImpl implements IReferenceService {
     @Override
     public void deleteReference(final long id) {
         referenceRepository.deleteById(id);
+    }
+
+    @Override
+    public ReferenceDto getByProduct(final ProductDto product) {
+        final Reference reference = referenceRepository
+                .findByProduct(ProductConvert.getInstance().dtoToEntity(product));
+        return reference != null ? ReferenceConvert.getInstance().entityToDto(reference) : null;
     }
 }

@@ -22,7 +22,7 @@ public class Cart {
     @Column(name = "id_cart")
     private Long id;
 
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_user", referencedColumnName = "id_user")
     private User user;
 

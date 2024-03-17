@@ -2,23 +2,35 @@ package io.ski.api.business.service.user;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.ski.api.business.convert.UserConvert;
+import io.ski.api.business.dto.CartDto;
 import io.ski.api.business.dto.UserDto;
+import io.ski.api.business.service.cart.ICartService;
+import io.ski.api.persistance.entity.User;
 import io.ski.api.persistance.repository.user.IUserRepository;
 
 @Service
 public class UserServiceImpl implements IUserService {
     private IUserRepository userRepository;
+    private ICartService cartService;
 
     public UserServiceImpl(final IUserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
+    @Autowired
+    public void setCartService(final ICartService cartService) {
+        this.cartService = cartService;
+    }
+
     @Override
     public void createUser(final UserDto user) {
-        userRepository.save(UserConvert.getInstance().dtoToEntity(user));
+        CartDto cartDto = new CartDto();
+        cartDto.setUser(user);
+        cartService.createCart(cartDto);
     }
 
     @Override
@@ -43,6 +55,16 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public void deleteUser(final Long id) {
-        userRepository.deleteById(id);
+        CartDto cartDto = cartService.getByUserCart(id);
+        cartService.deleteCart(cartDto.getId());
+    }
+
+    @Override
+    public String login(final String email, final String password) {
+        final User user = userRepository.findByEmail(email);
+        if (user != null && user.getPassword().equals(password)) {
+            return user.getId().toString();
+        }
+        return "failure";
     }
 }
