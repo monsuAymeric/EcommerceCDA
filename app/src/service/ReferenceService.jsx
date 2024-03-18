@@ -43,8 +43,26 @@ async function fetchReferencesByProducts(products) {
     return refs;
 }
 
+async function addReference(ref) {
+    const res = await axios.post("http://localhost:8080/refs", ref);
+    return res.data;
+}
+
+async function updateReference(ref) {
+    const res = await axios.put("http://localhost:8080/refs/", ref);
+    return res.data;
+}
+
+async function deleteReference(id) {
+    const res = await axios.delete("http://localhost:8080/refs/" + id);
+    return res.data;
+}
+
 export default {
     fetchReferences,
     fetchProducts,
     fetchReferencesByProducts,
+    addReference,
+    updateReference,
+    deleteReference,
 };
