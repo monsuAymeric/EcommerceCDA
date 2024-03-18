@@ -12,7 +12,7 @@ export default function header() {
     };
 
     return (
-        <div className='column is-8 is-offset-2'>
+        <div className='column is-8 is-offset-2 mt-3 mb-3'>
             <nav className='navbar is-info' role='navigation' aria-label='main navigation'>
                 <div className='navbar-brand'>
                     <a className='navbar-item' href='/'>
@@ -29,6 +29,9 @@ export default function header() {
                         </a>
                         <a className='navbar-item' href='/cart'>
                             Panier
+                        </a>
+                        <a className='navbar-item' href='/admin'>
+                            Administration
                         </a>
                     </div>
                     <div className='navbar-end'>
