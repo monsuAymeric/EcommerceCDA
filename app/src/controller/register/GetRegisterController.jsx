@@ -4,7 +4,7 @@ import RegisterView from "../../views/pages/RegisterView";
 
 export default function GetRegisterController() {
     const register = async (username, email, password) => {
-        const user = new UserModel(null, username, email, password);
+        const user = new UserModel(null, username, password, email);
         await UserService.createUser(user);
         window.location.assign("/login");
     };

@@ -40,7 +40,7 @@ export default function AdminView({ refs, deleteCallback }) {
                                                   Stock: {ref.products.length} <br />
                                               </p>
                                           </div>
-                                          <Link className='button is-warning mr-3' to={"/refFrom" + ref.id}>
+                                          <Link className='button is-warning mr-3' to={"/refForm" + ref.id}>
                                               <span className='icon'>
                                                   <img src='/assets/icons/pen.svg' alt='modifier' />
                                               </span>
