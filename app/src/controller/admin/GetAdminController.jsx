@@ -13,8 +13,13 @@ export default function GetAdminController() {
     };
 
     const removeReference = async (id) => {
-        await ReferenceService.deleteReference(id);
-        fetchReferences();
+        const res = await ReferenceService.deleteReference(id);
+        console.log(res);
+        if (res === 500) {
+            alert("Le produit est dans le panier d'un utilisateur");
+        } else {
+            fetchReferences();
+        }
     };
 
     useEffect(() => {

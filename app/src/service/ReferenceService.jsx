@@ -17,6 +17,23 @@ async function fetchReferences() {
 
 /**
  * @param {number} id The id of the reference to fetch
+ * @returns {ReferenceModel} The reference with the given id
+ */
+async function fetchReferenceById(id) {
+    const res = await axios.get("http://localhost:8080/refs/" + id);
+    let reference = new ReferenceModel(
+        res.data.id,
+        res.data.name,
+        res.data.price,
+        res.data.color,
+        res.data.description,
+        res.data.products
+    );
+    return reference;
+}
+
+/**
+ * @param {number} id The id of the reference to fetch
  * @returns {[ProductModel]} An array of all products in this reference
  */
 async function fetchProducts(id) {
@@ -43,23 +60,41 @@ async function fetchReferencesByProducts(products) {
     return refs;
 }
 
+/**
+ * @param {ReferenceModel} ref The reference to add to the cart
+ * @returns Api response
+ */
 async function addReference(ref) {
     const res = await axios.post("http://localhost:8080/refs", ref);
     return res.data;
 }
 
+/**
+ * @param {ReferenceModel} ref The reference to modify
+ * @returns Api response
+ */
 async function updateReference(ref) {
-    const res = await axios.put("http://localhost:8080/refs/", ref);
+    const res = await axios.put("http://localhost:8080/refs", ref);
     return res.data;
 }
 
+/**
+ * @param {number} id The id of the reference to delete
+ * @returns Api response
+ */
 async function deleteReference(id) {
-    const res = await axios.delete("http://localhost:8080/refs/" + id);
-    return res.data;
+    let res;
+    try {
+        res = await axios.delete("http://localhost:8080/refs/" + id);
+    } catch (error) {
+        return error.response.status
+    }
+    return res;
 }
 
 export default {
     fetchReferences,
+    fetchReferenceById,
     fetchProducts,
     fetchReferencesByProducts,
     addReference,
