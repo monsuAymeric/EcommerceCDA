@@ -24,13 +24,13 @@ export default function GetReferenceFormController() {
     const addReference = async (ref) => {
         ref.products = [new ProductModel()];
         await ReferenceService.addReference(ref);
-        fetchReference();
+        window.location.assign("/admin");
     };
-    
+
     const modifyReference = async (ref) => {
         ref.products = [new ProductModel()];
         await ReferenceService.updateReference(ref);
-        fetchReference();
+        window.location.assign("/admin");
     };
 
     return <ReferenceFormView reference={reference} addCallback={addReference} modifyCallback={modifyReference} />;
