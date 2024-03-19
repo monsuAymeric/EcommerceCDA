@@ -12,7 +12,7 @@ export default function header() {
     };
 
     return (
-        <div className='column is-8 is-offset-2 mt-3 mb-3'>
+        <div className='column is-8 is-offset-2 mt-3 mb-3 has-background-info'>
             <nav className='navbar is-info' role='navigation' aria-label='main navigation'>
                 <div className='navbar-brand'>
                     <a className='navbar-item' href='/'>

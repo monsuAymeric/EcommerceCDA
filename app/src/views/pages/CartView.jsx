@@ -24,8 +24,8 @@ export default function CartView({ products, callback, validCallback }) {
             <Header />
             <div className='column is-8 is-offset-2'>
                 {products && products.length > 0 ? (
-                    <div className='columns is-centered mb-6'>
-                        <p className='has-text-weight-bold p-2 mr-6'>{totalPrice}€</p>
+                    <div className='columns is-centered mb-6 is-flex is-align-items-center'>
+                        <p className='has-text-weight-bold is-size-4 mr-3'>Total : {totalPrice}€</p>
                         <a className='button is-primary' onClick={validCallback}>
                             Valider le panier
                         </a>
