@@ -1,8 +1,8 @@
-# **BroumBroum** _- Projet Concepteur Développeur d'Applications_
+# **Ecommerce - Architecture** _- Projet Concepteur Développeur d'Applications_
 
 ## Contexte du projet
 
-**_Dans le cadre de notre formation, nous devons développer un site e-commerce en utilisant l'architecture N-tier (en couches).
+Dans le cadre de notre formation, nous devons développer un site e-commerce en utilisant l'architecture N-tier (en couches).
 
 L'utilisateur doit pouvoir :
 
